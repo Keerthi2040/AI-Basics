@@ -1,0 +1,99 @@
+prompt,output,flag,username,timestamp
+write a 10 lines of code to built API?,"'I'd be happy to help you with Python. Here's a simple example of how to build an API using Flask, a lightweight web framework.
+
+```python
+# Import the required libraries
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+# Define a route for getting all books
+@app.route('/books', methods=['GET'])
+def get_all_books():
+    # Mock data for demonstration purposes
+    books = [
+        {'id': 1, 'title': 'Book 1', 'author': 'Author 1'},
+        {'id': 2, 'title': 'Book 2', 'author': 'Author 2'}
+    ]
+    
+    # Return the list of books as JSON
+    return jsonify(books)
+
+# Define a route for getting a single book by ID
+@app.route('/books/<int:book_id>', methods=['GET'])
+def get_book(book_id):
+    # Mock data for demonstration purposes
+    book = {
+        'id': 1,
+        'title': 'Book 1',
+        'author': 'Author 1'
+    }
+    
+    # Return the single book as JSON if found, otherwise return a message
+    if book_id == 1:
+        return jsonify(book)
+    else:
+        return jsonify({'message': f'Book {book_id} not found'}), 404
+
+# Define a route for creating a new book
+@app.route('/books', methods=['POST'])
+def create_book():
+    # Mock data for demonstration purposes
+    new_book = {
+        'id': len(books) + 1,
+        'title': request.json['title'],
+        'author': request.json['author']
+    }
+    
+    # Add the new book to the list of books
+    books.append(new_book)
+    
+    # Return the newly created book as JSON
+    return jsonify(new_book), 201
+
+# Define a route for updating an existing book
+@app.route('/books/<int:book_id>', methods=['PUT'])
+def update_book(book_id):
+    # Mock data for demonstration purposes
+    updated_book = {
+        'id': book_id,
+        'title': request.json['title'],
+        'author': request.json['author']
+    }
+    
+    # Find the book with the specified ID and update its details if found
+    book = next((book for book in books if book['id'] == book_id), None)
+    
+    if book:
+        book.update(updated_book)
+        return jsonify(book)
+    else:
+        return jsonify({'message': f'Book {book_id} not found'}), 404
+
+# Define a route for deleting a book
+@app.route('/books/<int:book_id>', methods=['DELETE'])
+def delete_book(book_id):
+    # Mock data for demonstration purposes
+    books.remove(book_id)
+    
+    # Return a success message if the book was deleted
+    return jsonify({'message': f'Book {book_id} deleted successfully'}), 204
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+```
+
+You can test this API using tools like curl or Postman. Here's an example of how to use curl to create a new book:
+
+```bash
+curl -X POST -H ""Content-Type: application/json"" -d '{""title"": ""New Book"", ""author"": ""Author 3""}' http://localhost:5000/books
+```
+
+And here's an example of how to retrieve all books using the /books route:
+
+```bash
+curl http://localhost:5000/books
+```
+
+You can also use Postman to test the API endpoints.",,,2025-02-18 12:50:30.107873

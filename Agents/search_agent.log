@@ -1,0 +1,10 @@
+2025-03-11 13:39:19,713 - ERROR: Critical error: Could not import duckduckgo-search python package. Please install it with `pip install -U duckduckgo-search`.
+2025-03-11 13:40:34,484 - INFO: response: https://duckduckgo.com/?q=CORTracker360 200
+2025-03-11 13:40:35,538 - INFO: response: https://duckduckgo.com/news.js?l=wt-wt&o=json&noamp=1&q=CORTracker360&vqd=4-263067691094208464265385462423463940324&p=-1&df=y 200
+2025-03-11 13:40:35,625 - INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2025-03-11 13:41:11,430 - INFO: response: https://duckduckgo.com/?q=CORTracker 200
+2025-03-11 13:41:12,516 - INFO: response: https://duckduckgo.com/news.js?l=wt-wt&o=json&noamp=1&q=CORTracker&vqd=4-135140654987326227816775524770416782211&p=-1&df=y 200
+2025-03-11 13:41:12,542 - INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 404 Not Found"
+2025-03-13 18:10:28,110 - INFO: response: https://duckduckgo.com/?q=Bala+Keerthimai+Akurathi 200
+2025-03-13 18:10:29,185 - INFO: response: https://duckduckgo.com/news.js?l=wt-wt&o=json&noamp=1&q=Bala+Keerthimai+Akurathi&vqd=4-113617099926641578018127860234935069366&p=-1&df=y 200
+2025-03-13 18:10:29,756 - INFO: HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 500 Internal Server Error"
