@@ -34,7 +34,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #langsmith Tracking
-os.environ['LANGCHAIN_API_KEY'] = os.getenv("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","default_langchain_api_key")
+os.environ['LANGCHAIN_API_KEY'] = os.getenv("****","default_langchain_api_key")
 os.environ['LANGCHAIN_TRACING_V2'] = "true"
 os.environ['LANGCHAIN_PROJECT'] = "Chat_with_PDF"
 
